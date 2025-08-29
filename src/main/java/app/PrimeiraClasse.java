@@ -1,5 +1,7 @@
 package app;
 
+import java.util.Calendar;
+
 public class PrimeiraClasse {
     public static void main(String[] args) {
         Aluno al = new Aluno();
@@ -23,7 +25,13 @@ public class PrimeiraClasse {
 
         Atividade[] objetos = new Atividade[3];
 
-        objetos[0] = new Compromisso();
-        objetos[1] = new Tarefa(); 
+        Calendar c = Calendar.getInstance();
+        c.set(2025, 9, 28);
+
+        objetos[0] = new Compromisso("Novo Compromisso", c, c);
+        objetos[1] = new Tarefa("Nova Tarefa", true);
+        
+        System.out.println(objetos[0].getDetalhes());
+        System.out.println(objetos[1].getDetalhes());
     }
 }
